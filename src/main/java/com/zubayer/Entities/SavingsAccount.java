@@ -6,12 +6,12 @@ import java.util.GregorianCalendar;
  *
  * @author Md. Zubayer Islam
  */
-public class CurrentAccount extends Account implements AccountAction {
+public class SavingsAccount extends Account implements AccountAction {
 
-    private final double minOpenBalance = 10.0;
-    private final double minBalToKeep = 5.0;
+    private final double minOpenBalance = 15.0;
+    private final double minBalToKeep = 10.0;
     
-    public CurrentAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
+    public SavingsAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
         super(name,accNumber,creationDate,balance);
     }
 
@@ -37,5 +37,4 @@ public class CurrentAccount extends Account implements AccountAction {
             return amount;
         }
     }
-    
 }
