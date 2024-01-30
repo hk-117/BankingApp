@@ -6,5 +6,5 @@ package com.zubayer.Entities;
  */
 public interface AccountAction {
     public void deposit(double amount);
-    public double withdraw(double amount);
+    public boolean withdraw(double amount);
 }

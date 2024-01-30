@@ -7,19 +7,9 @@ import java.util.GregorianCalendar;
  * @author Md. Zubayer Islam
  */
 public class SalaryAccount extends Account implements AccountAction {
-    private final double minOpenBalance = 25.0;
-    private final double minBalToKeep = 15.0;
     
     public SalaryAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
-        super(name,accNumber,creationDate,balance);
-    }
-
-    public double getMinOpenBalance() {
-        return minOpenBalance;
-    }
-
-    public double getMinBalToKeep() {
-        return minBalToKeep;
+        super(name,accNumber,creationDate,balance,25.0,15.0);
     }
     
     @Override
@@ -28,12 +18,12 @@ public class SalaryAccount extends Account implements AccountAction {
     }
 
     @Override
-    public double withdraw(double amount) {
-        if(this.getBalance() - amount < minBalToKeep){
-            return 0.0;
+    public boolean withdraw(double amount) {
+        if(this.getBalance() - amount < this.getMinBalToKeep()){
+            return false;
         } else {
             this.setBalance(this.getBalance()-amount);
-            return amount;
+            return true;
         }
     }
 }
