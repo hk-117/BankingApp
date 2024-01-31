@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class MainController {
     private static final ArrayList <Account> accounts = new ArrayList<>();
     private static MainController controller;
+    private static int accNumber = 0;
     
     /*
         Only Single instance is needed of this controller
@@ -26,19 +27,23 @@ public class MainController {
         return controller;
     }
     
-    public static void addAccount(Account account){
-        accounts.add(account);
-        System.out.println("Account added.");
+    public int getNewAccountNumber(){
+        return ++accNumber;
     }
     
-    public static void displayAccounts(){
-        System.out.println("\t Account Number \t Name \n");
+    public void addAccount(Account account){
+        accounts.add(account);
+        System.out.println("Account Created Successfully.");
+    }
+    
+    public void displayAccounts(){
+        System.out.println("Account Number \t Name \t\t Type \n");
         for(Account ac: accounts){
-            System.out.println("\t" + ac.getAccNumber() + "\t" + ac.getName());
+            System.out.println("\t" + ac.getAccNumber() + "\t" + ac.getName() + "\t" + ac.getClass().getSimpleName());
         }
     }
     
-    public static int searchAccount(int accountNumber){
+    public int searchAccount(int accountNumber){
         for(int i=0;i<accounts.size();i++){
             if(accounts.get(i).getAccNumber() == accountNumber){
                 return i;
@@ -47,7 +52,7 @@ public class MainController {
         return -1;
     }
     
-    public static boolean deleteAccount(int accountNumber){
+    public boolean deleteAccount(int accountNumber){
         int searchResult = searchAccount(accountNumber);
         if(searchResult == -1){
             return false;

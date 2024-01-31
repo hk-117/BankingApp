@@ -23,7 +23,8 @@ public class ApplicationUI {
         "Current Account",
         "Savings Account",
         "Salary Account",
-        "Business Account"
+        "Business Account",
+        "Back"
     };
     
     public void welcome(){
@@ -37,6 +38,7 @@ public class ApplicationUI {
     }
     
     public int ShowMenu(String[] menu){
+        printSeparator();
         for(int i=0; i<menu.length; i++){
             System.out.println((i+1) + ". " + menu[i] + "\n");
         }
