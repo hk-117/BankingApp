@@ -61,4 +61,8 @@ public class MainController {
         return true;
     }
     
+    public void updateAccount(int accountNumber,String name){
+        Account searchResult = searchAccount(accountNumber);
+        searchResult.setName(name);
+    }
 }

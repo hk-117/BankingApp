@@ -101,6 +101,16 @@ public class BankingApp {
                     ui.printSeparator();
                     System.out.println("Updating an account");
                     ui.printSeparator();
+                    System.out.println("Please, enter the account number: ");
+                    accountNumber = sc.nextInt();
+                    if(controller.searchAccount(accountNumber) != null){
+                        System.out.println("Enter new Account Name (Single Word): ");
+                        String tmp = sc.next();
+                        controller.updateAccount(accountNumber, tmp);
+                         System.out.println("Account Updated.");
+                    } else {
+                        System.out.println("Account does not exist! Enter a Valid account number.");
+                    }
                     break;
                     
                 case 4:
