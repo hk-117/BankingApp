@@ -7,9 +7,14 @@ import java.util.GregorianCalendar;
  * @author Md. Zubayer Islam
  */
 public class BusinessAccount extends Account implements AccountAction {
+    private static final double MIN_OPEN_BALANCE = 150.0;
     
     public BusinessAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
-        super(name,accNumber,creationDate,balance,150.0, 50.0);
+        super(name,accNumber,creationDate,balance, 50.0);
+    }
+    
+    public static double getMinOpenBalance() {
+        return MIN_OPEN_BALANCE;
     }
     
     @Override

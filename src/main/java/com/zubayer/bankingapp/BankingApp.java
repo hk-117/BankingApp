@@ -11,6 +11,7 @@ public class BankingApp {
 
     public static void main(String[] args) {
         ApplicationUI ui = new ApplicationUI();
+        MainController controller = MainController.getMainController();
         ui.welcome();
         int choice;
         do{

@@ -11,15 +11,13 @@ public abstract class Account {
     private final int accNumber;
     private final GregorianCalendar creationDate;
     private double balance;
-    private final double minOpenBalance;
     private final double minBalToKeep;
 
-    Account(String name, int accNumber, GregorianCalendar creationDate, double balance,double minOpenBalance, double minBalToKeep) {
+    Account(String name, int accNumber, GregorianCalendar creationDate, double balance, double minBalToKeep) {
         this.name = name;
         this.accNumber = accNumber;
         this.creationDate = creationDate;
         this.balance = balance;
-        this.minOpenBalance = minOpenBalance;
         this.minBalToKeep = minBalToKeep;
     }
 
@@ -45,10 +43,6 @@ public abstract class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-    
-    public double getMinOpenBalance() {
-        return minOpenBalance;
     }
 
     public double getMinBalToKeep() {
