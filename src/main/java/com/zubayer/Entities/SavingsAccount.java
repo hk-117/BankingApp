@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
  *
  * @author Md. Zubayer Islam
  */
-public class SavingsAccount extends Account implements AccountAction {
+public class SavingsAccount extends Account {
     private static final double MIN_OPEN_BALANCE = 15.0;
     
     public SavingsAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){

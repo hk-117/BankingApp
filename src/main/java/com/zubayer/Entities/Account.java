@@ -6,7 +6,7 @@ package com.zubayer.Entities;
 
 import java.util.GregorianCalendar;
 
-public abstract class Account {
+public abstract class Account implements AccountAction{
     private String name;
     private final int accNumber;
     private final GregorianCalendar creationDate;

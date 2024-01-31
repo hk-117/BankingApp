@@ -39,22 +39,22 @@ public class MainController {
     public void displayAccounts(){
         System.out.println("Account Number \t Name \t\t Type \n");
         for(Account ac: accounts){
-            System.out.println("\t" + ac.getAccNumber() + "\t" + ac.getName() + "\t" + ac.getClass().getSimpleName());
+            System.out.println("\t" + ac.getAccNumber() + "\t" + ac.getName() + "\t\t" + ac.getClass().getSimpleName());
         }
     }
     
-    public int searchAccount(int accountNumber){
+    public Account searchAccount(int accountNumber){
         for(int i=0;i<accounts.size();i++){
             if(accounts.get(i).getAccNumber() == accountNumber){
-                return i;
+                return accounts.get(i);
             }
         }
-        return -1;
+        return null;
     }
     
     public boolean deleteAccount(int accountNumber){
-        int searchResult = searchAccount(accountNumber);
-        if(searchResult == -1){
+        Account searchResult = searchAccount(accountNumber);
+        if(searchResult == null){
             return false;
         }
         accounts.remove(searchResult);

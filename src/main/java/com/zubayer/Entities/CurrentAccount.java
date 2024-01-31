@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
  *
  * @author Md. Zubayer Islam
  */
-public class CurrentAccount extends Account implements AccountAction {
+public class CurrentAccount extends Account {
     private static final double MIN_OPEN_BALANCE = 10.0;
     
     public CurrentAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
@@ -20,6 +20,7 @@ public class CurrentAccount extends Account implements AccountAction {
     @Override
     public void deposit(double amount) {
         this.setBalance(this.getBalance() + amount);
+        System.out.println("Deposited Successfully.");
     }
 
     @Override

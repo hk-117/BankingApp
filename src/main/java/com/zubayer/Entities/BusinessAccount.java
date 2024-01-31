@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
  *
  * @author Md. Zubayer Islam
  */
-public class BusinessAccount extends Account implements AccountAction {
+public class BusinessAccount extends Account {
     private static final double MIN_OPEN_BALANCE = 150.0;
     
     public BusinessAccount(String name, int accNumber, GregorianCalendar creationDate, double balance){
@@ -25,6 +25,7 @@ public class BusinessAccount extends Account implements AccountAction {
         */
         if(amount > 1000){
             this.setBalance(this.getBalance() + amount + 5.00);
+            System.out.println("Congratulations!, You got a bonus");
         } else {
             this.setBalance(this.getBalance() + amount);
         }

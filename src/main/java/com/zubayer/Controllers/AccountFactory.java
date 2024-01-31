@@ -12,7 +12,7 @@ public class AccountFactory {
         switch(accType){
             case "Current":
                 if(initialBalance < CurrentAccount.getMinOpenBalance()){
-                    System.out.println("Please, make a deposit more than " + initialBalance);
+                    System.out.println("Please, make a deposit at least " + CurrentAccount.getMinOpenBalance());
                 } else {
                     return new CurrentAccount(name,accNumber,creationDate,initialBalance);
                 }
@@ -20,7 +20,7 @@ public class AccountFactory {
                 
             case "Savings":
                 if(initialBalance < SavingsAccount.getMinOpenBalance()){
-                    System.out.println("Please, make a deposit more than " + initialBalance);
+                    System.out.println("Please, make a deposit at least " + SavingsAccount.getMinOpenBalance());
                 } else {
                     return new SavingsAccount(name,accNumber,creationDate,initialBalance);
                 }
@@ -28,7 +28,7 @@ public class AccountFactory {
             
             case "Salary":
                 if(initialBalance < SalaryAccount.getMinOpenBalance()){
-                    System.out.println("Please, make a deposit more than " + initialBalance);
+                    System.out.println("Please, make a deposit at least " + SalaryAccount.getMinOpenBalance());
                 } else {
                     return new SalaryAccount(name,accNumber,creationDate,initialBalance);
                 }
@@ -36,7 +36,7 @@ public class AccountFactory {
             
             case "Business":
                 if(initialBalance < BusinessAccount.getMinOpenBalance()){
-                    System.out.println("Please, make a deposit more than " + initialBalance);
+                    System.out.println("Please, make a deposit at least " + BusinessAccount.getMinOpenBalance());
                 } else {
                     return new BusinessAccount(name,accNumber,creationDate,initialBalance);
                 }
